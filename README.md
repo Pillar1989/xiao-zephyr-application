@@ -55,12 +55,12 @@ environment. Follow the official
 ### Initialization
 
 The first step is to initialize the workspace folder (``my-workspace``) where
-the ``example-application`` and all Zephyr modules will be cloned. Run the following
+the ``xiao-zephyr-application`` and all Zephyr modules will be cloned. Run the following
 command:
 
 ```shell
-# initialize my-workspace for the example-application (main branch)
-west init -m https://github.com/zephyrproject-rtos/example-application --mr main my-workspace
+# initialize my-workspace for the xiao-zephyr-application (main branch)
+west init -m https://github.com/Pillar1989/xiao-zephyr-application/ --mr main my-workspace
 # update Zephyr modules
 cd my-workspace
 west update
@@ -71,13 +71,14 @@ west update
 To build the application, run the following command:
 
 ```shell
-cd example-application
-west build -b $BOARD app
+cd xiao-zephyr-application
+west build -b xiao_rp2350/rp2350a/m33 app
+
 ```
 
-where `$BOARD` is the target board.
+where `xiao_rp2350/rp2350a/m33` is the target board.
 
-You can use the `custom_plank` board found in this
+You can use the `seeed` board found in this
 repository. Note that Zephyr sample boards may be used if an
 appropriate overlay is provided (see `app/boards`).
 
@@ -85,7 +86,7 @@ A sample debug configuration is also provided. To apply it, run the following
 command:
 
 ```shell
-west build -b $BOARD app -- -DEXTRA_CONF_FILE=debug.conf
+west build -b xiao_rp2350/rp2350a/m33 app -- -DEXTRA_CONF_FILE=debug.conf
 ```
 
 Once you have built the application, run the following command to flash it:
