@@ -7,8 +7,8 @@ sample:
 common:
   build_only: true
   integration_platforms:
-    - custom_plank
-    - nucleo_f302r8
+    - xiao_rp2350
+    - rpi_pico2
 tests:
   app.default: {}
   app.debug:

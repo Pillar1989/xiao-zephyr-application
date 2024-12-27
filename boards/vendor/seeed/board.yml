@@ -2,7 +2,8 @@
 # SPDX-License-Identifier: Apache-2.0
 
 board:
-  name: custom_plank
-  vendor: vendor
+  name: xiao_rp2350
+  full_name: Seeed Xiao RP2350
+  vendor: seeed
   socs:
-    - name: nrf52840
+    - name: rp2350a
