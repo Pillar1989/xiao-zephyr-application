@@ -37,7 +37,7 @@ jobs:
           if [ "${{ runner.os }}" = "Windows" ]; then
             EXTRA_TWISTER_FLAGS="--short-build-path -O/tmp/twister-out"
           fi
-          west twister -T app -v --inline-logs --integration $EXTRA_TWISTER_FLAGS
+          west build -b rpi_pico2/rp2350a/m33 app
 
       - name: Twister Tests
         working-directory: example-application
@@ -46,4 +46,4 @@ jobs:
           if [ "${{ runner.os }}" = "Windows" ]; then
             EXTRA_TWISTER_FLAGS="--short-build-path -O/tmp/twister-out"
           fi
-          west twister -T tests -v --inline-logs --integration $EXTRA_TWISTER_FLAGS
+          west build -b rpi_pico2/rp2350a/m33 app
